@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа - VeraVola</title>
+    <meta name="description" content="Оформление заказа VeraVola: контактные данные, доставка, оплата и подтверждение покупки.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="checkout">
+    <div id="siteHeader"></div>
+
+    <main class="page-section">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="index.html">Главная</a>
+                <span>/</span>
+                <a href="cart.html">Корзина</a>
+                <span>/</span>
+                <span>Оформление заказа</span>
+            </nav>
+
+            <section class="section-head">
+                <div>
+                    <p class="eyebrow">Последний шаг</p>
+                    <h1>Оформление заказа</h1>
+                    <p class="section-copy">Проверьте данные, выберите доставку и оплату. Мы уже почти упаковали вашу капсулу.</p>
+                </div>
+            </section>
+
+            <div id="checkoutPageContent"></div>
+        </div>
+    </main>
+
+    <div id="siteFooter"></div>
+    <div class="notification" id="notification" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="data.js"></script>
+    <script src="site.js"></script>
+</body>
+</html>

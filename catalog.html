@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - VeraVola</title>
+    <meta name="description" content="Каталог VeraVola: платья, блузы и брюки из льна и хлопка с удобной фильтрацией.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="catalog">
+    <div id="siteHeader"></div>
+
+    <main class="page-section">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="index.html">Главная</a>
+                <span>/</span>
+                <span>Каталог</span>
+            </nav>
+
+            <section class="section-head">
+                <div>
+                    <p class="eyebrow">Коллекция VeraVola</p>
+                    <h1>Каталог</h1>
+                    <p class="section-copy">Выбирайте модели из натуральных тканей, фильтруйте по материалу, цвету и настроению сезона.</p>
+                </div>
+                <div class="section-actions">
+                    <span class="count-badge" id="productCount">0 товаров</span>
+                </div>
+            </section>
+
+            <section class="catalog-layout">
+                <aside class="filters-card">
+                    <div class="filters-top">
+                        <h2>Фильтры</h2>
+                        <button class="text-btn" type="button" id="clearFiltersBtn">Сбросить</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Категория</h3>
+                        <label><input type="checkbox" name="category" value="Платья"> Платья</label>
+                        <label><input type="checkbox" name="category" value="Блузы"> Блузы</label>
+                        <label><input type="checkbox" name="category" value="Брюки"> Брюки</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Материал</h3>
+                        <label><input type="checkbox" name="material" value="Лен"> Лен</label>
+                        <label><input type="checkbox" name="material" value="Хлопок"> Хлопок</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Цвет</h3>
+                        <label><input type="checkbox" name="color" value="Бежевый"> Бежевый</label>
+                        <label><input type="checkbox" name="color" value="Белый"> Белый</label>
+                        <label><input type="checkbox" name="color" value="Черный"> Черный</label>
+                        <label><input type="checkbox" name="color" value="Серый"> Серый</label>
+                        <label><input type="checkbox" name="color" value="Оливковый"> Оливковый</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Цена</h3>
+                        <div class="price-range">
+                            <input type="number" id="priceMin" min="0" placeholder="от">
+                            <input type="number" id="priceMax" min="0" placeholder="до">
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Особое</h3>
+                        <label><input type="checkbox" name="badge" value="Новинка"> Новинки</label>
+                        <label><input type="checkbox" name="badge" value="Sale"> Sale</label>
+                        <label><input type="checkbox" name="badge" value="Хит"> Хиты</label>
+                    </div>
+                </aside>
+
+                <section>
+                    <div class="catalog-toolbar">
+                        <div class="toolbar-topline">
+                            <div class="quick-filters" id="catalogQuickFilters">
+                                <button class="quick-filter-chip is-active" type="button" data-quick-filter="all">Все</button>
+                                <button class="quick-filter-chip" type="button" data-quick-filter="new">Новинки</button>
+                                <button class="quick-filter-chip" type="button" data-quick-filter="linen">Лён</button>
+                                <button class="quick-filter-chip" type="button" data-quick-filter="dresses">Платья</button>
+                                <button class="quick-filter-chip" type="button" data-quick-filter="black">Чёрный</button>
+                            </div>
+                            <div class="catalog-view-toggle" aria-label="Вид каталога">
+                                <button class="is-active" type="button" data-grid-view="grid-3" aria-label="Три колонки">
+                                    <i class="fa-solid fa-grip"></i>
+                                </button>
+                                <button type="button" data-grid-view="grid-2" aria-label="Две колонки">
+                                    <i class="fa-solid fa-table-cells-large"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="toolbar-search">
+                            <input type="search" id="catalogSearch" placeholder="Поиск по каталогу">
+                        </div>
+                        <label class="sort-label" for="sortSelect">
+                            Сортировка
+                            <select id="sortSelect">
+                                <option value="featured">По умолчанию</option>
+                                <option value="priceAsc">Сначала дешевле</option>
+                                <option value="priceDesc">Сначала дороже</option>
+                                <option value="nameAsc">По названию</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="products-grid" id="catalogGrid"></div>
+                    <div class="empty-state is-hidden" id="catalogEmpty">
+                        <i class="fa-solid fa-filter-circle-xmark"></i>
+                        <h2>Ничего не найдено</h2>
+                        <p>Попробуйте сбросить фильтры или выбрать другой диапазон цены.</p>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <div id="siteFooter"></div>
+    <div class="notification" id="notification" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="data.js"></script>
+    <script src="site.js"></script>
+</body>
+</html>
